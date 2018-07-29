@@ -62,9 +62,9 @@ public class PanelController {
    * Get Hourly Electricity from Previous dates.
    */
   
-  @GetMapping(path = "/api/panels/{panel-serial}/hourly")
+  @GetMapping(path = "/api/panels/{	-serial}/hourly")
   public ResponseEntity<?> hourlyElectricity(
-      @PathVariable(value = "banel-serial") String panelSerial,
+      @PathVariable(value = "panel-serial") String panelSerial,
       @PageableDefault(size = 5,value = 0) Pageable pageable) {
     Panel panel = panelService.findBySerial(panelSerial);
     if (panel == null) {
